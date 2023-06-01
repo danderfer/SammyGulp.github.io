@@ -7,9 +7,9 @@ function changeText(val) {
   function openRandomWebsite() {
             // List of websites (add your own)
             var websites = [
-                "https://www.example1.com",
-                "https://www.example2.com",
-                "https://www.example3.com"
+                "https://sammygulp.github.io/theSecondPage",
+                "https://sammygulp.github.io/theThirdPage",
+                "https://sammygulp.github.io/index"
             ];
             
             // Select a random website from the list
