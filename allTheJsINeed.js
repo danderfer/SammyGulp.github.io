@@ -1,4 +1,4 @@
-function changeText(name, text) {
-    document.getElementById(name).textContent = text; // Change the text content to "New Text"
+function changeText(val) {
+    document.getElementById(content).textContent = val;
     return;
   }
