@@ -1,5 +1,5 @@
 function changeText(val) {
-    document.getElementById(Content).innerHtml = val;
+    document.getElementById(Content).innerHTML = val;
     return;
   }
 
@@ -17,5 +17,5 @@ function changeText(val) {
             var randomWebsite = websites[randomIndex];
             
             // Open the random website in a new tab
-            window.open(randomWebsite, "_blank");
+            window.open(randomWebsite, "_self");
         }
