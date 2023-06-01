@@ -16,6 +16,6 @@ function changeText(val) {
             var randomIndex = Math.floor(Math.random() * websites.length);
             var randomWebsite = websites[randomIndex];
             
-            // Open the random website in a new tab
-            window.open(randomWebsite, "_self");
+            //Should replace the site with another.
+            window.open(randomWebsite, "_parent");
         }
