@@ -57,7 +57,7 @@
     <div id="paddle-right" class="paddle"></div>
     <div id="ball"></div>
   </div>
-
+  <div id="p"></div>
   <script>
     document.addEventListener('DOMContentLoaded', function() {
       var gameContainer = document.getElementById('game-container');
@@ -71,6 +71,8 @@
       var ballY = 145;
       var ballSpeedX = -2;
       var ballSpeedY = 2;
+      var p = document.getElementById('p');
+      let con = 0;
 
       function update() {
         paddleLeft.style.top = paddleLeftY + 'px';
@@ -93,10 +95,17 @@
           ballSpeedX *= -1;
         }
 
-        if (ballX <= 0 || ballX >= 390) {
+        if (ballX >= 390) {
           resetBall();
+          con++;
         }
+        if (ballX <= 0) {
+          resetBall();
+          con = 0;
+        }
+        p.innerHTML = con;
 
+        // AI-controlled paddle movement
         var paddleSpeed = 1.5;
         if (ballY + 5 < paddleRightY + 25) {
           paddleRightY -= paddleSpeed;
