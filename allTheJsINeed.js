@@ -7,8 +7,7 @@ function changeText(val) {
   function openRandomWebsite() {
             // List of websites (add your own)
             var websites = [
-                "https://sammygulp.github.io/theSecondPage",
-                "https://sammygulp.github.io/theThirdPage",
+                "https://sammygulp.github.io/a",
                 "https://sammygulp.github.io/index"
             ];
             
