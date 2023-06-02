@@ -8,7 +8,8 @@ function changeText(val) {
             // List of websites (add your own)
             var websites = [
                 "https://sammygulp.github.io/a",
-                "https://sammygulp.github.io/index"
+                "https://sammygulp.github.io/index",
+                "https://sammygulp.github.io/b"
             ];
             
             // Select a random website from the list
