@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pongy!</title>
+    <style>
+       #game-container {
+      position: relative;
+      width: 400px;
+      height: 300px;
+      margin: 0 auto;
+      border: 1px solid black;
+      overflow: hidden;
+    }
+
+    .paddle {
+      position: absolute;
+      width: 10px;
+      height: 50px;
+      background-color: black;
+    }
+
+    #paddle-left {
+      left: 0;
+      top: 125px;
+    }
+
+    #paddle-right {
+      right: 0;
+      top: 125px;
+    }
+
+    #ball {
+      position: absolute;
+      width: 10px;
+      height: 10px;
+      background-color: black;
+      top: 145px;
+      left: 195px;
+    }
+  </style>
+  
+</head>
+<body style="background-color: #2dc79e;">
+    <h1 style="
+    color: #ce6565;
+    width: fit-content;
+    border-radius: 54px;
+    border: 3px green solid;
+    background: black;
+">Flashy Ball!!</h1>
+  
+  <div id="game-container">
+    <div id="paddle-left" class="paddle"></div>
+    <div id="paddle-right" class="paddle"></div>
+    <div id="ball"></div>
+  </div>
+
+  <script>
+    document.addEventListener('DOMContentLoaded', function() {
+      var gameContainer = document.getElementById('game-container');
+      var paddleLeft = document.getElementById('paddle-left');
+      var paddleRight = document.getElementById('paddle-right');
+      var ball = document.getElementById('ball');
+
+      var paddleLeftY = 125;
+      var paddleRightY = 125;
+      var ballX = 195;
+      var ballY = 145;
+      var ballSpeedX = -2;
+      var ballSpeedY = 2;
+
+      function update() {
+        paddleLeft.style.top = paddleLeftY + 'px';
+        paddleRight.style.top = paddleRightY + 'px';
+        ball.style.left = ballX + 'px';
+        ball.style.top = ballY + 'px';
+
+        ballX += ballSpeedX;
+        ballY += ballSpeedY;
+
+        if (ballY <= 0 || ballY >= 290) {
+          ballSpeedY *= -1;
+        }
+
+        if (ballX <= 10 && ballY + 10 >= paddleLeftY && ballY <= paddleLeftY + 50) {
+          ballSpeedX *= -1;
+        }
+
+        if (ballX >= 380 && ballY + 10 >= paddleRightY && ballY <= paddleRightY + 50) {
+          ballSpeedX *= -1;
+        }
+
+        if (ballX <= 0 || ballX >= 390) {
+          resetBall();
+        }
+
+        var paddleSpeed = 1.5;
+        if (ballY + 5 < paddleRightY + 25) {
+          paddleRightY -= paddleSpeed;
+        } else if (ballY + 5 > paddleRightY + 25) {
+          paddleRightY += paddleSpeed;
+        }
+
+        requestAnimationFrame(update);
+      }
+
+      function resetBall() {
+        ballX = 195;
+        ballY = 145;
+        ballSpeedX = -2;
+        ballSpeedY = 2;
+      }
+
+      document.addEventListener('mousemove', function(event) {
+        var mouseY = event.clientY;
+        paddleLeftY = mouseY - gameContainer.offsetTop - paddleLeft.offsetHeight / 2;
+      });
+
+      update();
+    });
+  </script>
+ 
+    <footer><object data="foot.html" width="100%" height="400px"></object></footer>
+</body>
+</html>
