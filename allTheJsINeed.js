@@ -19,3 +19,5 @@ function changeText(val) {
             //Should replace the site with another.
             window.open(randomWebsite, "_parent");
         }
+
+        
