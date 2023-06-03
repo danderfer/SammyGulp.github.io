@@ -63,8 +63,13 @@
   left: 400px;
 " ></div>
 <div id="xy"></div>
+<p><button id="reset">Click To Reset Counter</button></p>
   <script>
+    const reset = document.getElementById("reset");
     document.addEventListener('DOMContentLoaded', function() {
+    reset.addEventListener("click", function() {
+    	  con = 0;  
+      });
       var gameContainer = document.getElementById('game-container');
       var paddleLeft = document.getElementById('paddle-left');
       var paddleRight = document.getElementById('paddle-right');
@@ -118,7 +123,7 @@
         }
         if (ballX <= 0) {
           resetBall();
-          con = 0;
+          con -= 1;
           p.innerHTML = con;
         }
         
