@@ -44,7 +44,7 @@
   <div id="flashy-ball" class="flashy-ball"></div>
   <p>It doesn't like working above the button but, eh.</p>
     <script>
-      document.addEventListener('mousemove', function(event) {
+      window.addEventListener('mousemove', function(event) {
         var object = document.getElementById('flashy-ball');
         object.style.left = (event.clientX - object.offsetWidth / 2) + 'px';
         object.style.top = (event.clientY - object.offsetHeight / 2) + 'px';
