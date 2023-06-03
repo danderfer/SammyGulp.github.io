@@ -5,7 +5,7 @@ function changeText(val) {
 
 
   function openRandomWebsite() {
-            // List of websites (add your own)
+            // List of websites 
             var websites = [
                 "https://sammygulp.github.io/a",
                 "https://sammygulp.github.io/index",
@@ -16,7 +16,9 @@ function changeText(val) {
             // Select a random website from the list
             var randomIndex = Math.floor(Math.random() * websites.length);
             var randomWebsite = websites[randomIndex];
-            
+            if(randomWebsite == window.location.href){
+                openRandomWebsite();
+            }
             //Should replace the site with another.
             window.open(randomWebsite, "_parent");
         }
