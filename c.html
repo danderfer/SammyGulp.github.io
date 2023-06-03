@@ -61,6 +61,11 @@
   <div id="p" style="
   position: fixed;
   left: 400px;
+  color: #ce6565;
+  width: fit-content;
+  border-radius: 54px;
+  border: 3px green solid;
+  background: black;
 " ></div>
 <div id="xy"></div>
 <p><button id="reset">Click To Reset Counter</button></p>
@@ -93,7 +98,7 @@
 
         ballX += ballSpeedX;
         ballY += ballSpeedY;
-        p.innerHTML = con;
+        updateP();
         
         if(ballSpeedX == 0 || ballSpeedY == 0){
         ballSpeedFix();
@@ -119,12 +124,10 @@
         if (ballX >= 390) {
           resetBall();
           con++;
-          p.innerHTML = con;
         }
         if (ballX <= 0) {
           resetBall();
           con -= 1;
-          p.innerHTML = con;
         }
         
 
@@ -159,6 +162,10 @@
       function ballSpeedFix(){
       	ballSpeedX = 3;
         ballSpeedY = 2;
+      }
+
+      function updateP(){
+        p.innerHTML =("Points: "+con);
       }
 
       document.addEventListener('mousemove', function(event) {
