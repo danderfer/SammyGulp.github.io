@@ -1,6 +1,28 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+    <script>
+        function showElementInfo(elementSymbol) {
+            var elementInfo = ""; // Add descriptions for each element here
+
+            switch (elementSymbol) {
+                case "H":
+                    elementInfo = "Hydrogen: The lightest element and the most abundant in the universe.";
+                    break;
+                case "He":
+                    elementInfo = "Helium: A noble gas used in balloons and as a cooling agent.";
+                    break;
+                case "Li":
+                    elementInfo = "Lithium: Used in batteries and for psychiatric medication.";
+                    break;
+                // Will finnish adding elements when the tests work.
+                default:
+                    elementInfo = "Element information not available.";
+            }
+
+            alert(elementInfo);
+        }
+    </script>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -16,13 +38,8 @@
 ">Welcome To The Interactive Peridoic Table</h1>
     <p>Click on an element to see more information:</p>
     <p>
-        <!DOCTYPE html>
-<html>
-<head>
 
-</head>
-<body>
-
+    
   
     <table> 
     <tr>
@@ -32,7 +49,7 @@
 
     <table>
         <tr>
-            <td style="width: 50px; height: 50px; background-color: #dd8484; text-align: center; border: 1px solid black;">1<br>
+            <td onclick="showElementInfo('H');" style="width: 50px; height: 50px; background-color: #dd8484; text-align: center; border: 1px solid black;">1<br>
         H</td>
       <!-- adding 16 empty cells -->
       <td style = "empty-cells: hide; width: 50px; height: 50px;"></td>
@@ -384,10 +401,7 @@
 
 
 
-</body>
-</html>
-    </p>   
+
     
-    
-</body>
+</table>
 </html>
